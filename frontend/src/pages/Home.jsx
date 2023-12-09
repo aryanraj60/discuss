@@ -47,8 +47,17 @@ const Home = () => {
 
   return (
     <div className="max-w-xl mx-auto my-8 p-6 bg-white shadow-md rounded-md">
-      <nav class="bg-blue-200 text-black p-2 text-center flex justify-between">
+      <nav class="bg-blue-200 text-black p-2 text-center flex gap-3 justify-between">
         <h2>Welcome {user?.name}</h2>
+
+        <button
+          onClick={() => {
+            navigate("/create-topic");
+          }}
+          className="p-1 bg-black/80 text-white"
+        >
+          Create Topic
+        </button>
         <button
           className="bg-red-500 text-white"
           onClick={() => {
