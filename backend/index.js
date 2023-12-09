@@ -3,6 +3,9 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const speakeasy = require("speakeasy");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -11,9 +14,7 @@ app.use(cors());
 app.use(bodyParser.json());
 const sgMail = require("@sendgrid/mail");
 
-sgMail.setApiKey(
-  "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"
-);
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const connectToDB = async () => {
   await mongoose.connect(
