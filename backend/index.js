@@ -65,6 +65,10 @@ const sendOTP = async (email, otp) => {
   }
 };
 
+app.get("/", (req, res) => {
+  res.send("Api is working");
+});
+
 app.get("/api/user/:userId", async (req, res) => {
   try {
     const { userId } = req.params;
